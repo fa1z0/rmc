@@ -1,0 +1,181 @@
+/* Modal Overlay */
+.table-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 2000;
+  padding: 1.5rem;
+}
+
+.table-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Window Container */
+.table-modal-container {
+  background: #ffffff;
+  width: 95%;
+  /* max-width: 1200px; */
+  max-width: 1280px;
+  max-height: 90vh;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: modalSlideUp 0.3s ease-out forwards;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Header */
+.table-modal-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+}
+
+.table-modal-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2563eb;
+  letter-spacing: 0.05em;
+}
+
+.table-modal-header h2 {
+  margin: 0.25rem 0 0 0;
+  font-size: 1.4rem;
+  color: #0f172a;
+}
+
+.table-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  color: #64748b;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.15s ease;
+}
+
+.table-modal-close:hover {
+  color: #0f172a;
+}
+
+/* Body & Responsive Table */
+.table-modal-body {
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.styled-grant-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: #334155;
+  text-align: left;
+}
+
+.styled-grant-table th {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-weight: 700;
+  /* padding: 0.9rem 1rem; */
+  padding: 0.8rem 0.4rem;
+  border-bottom: 2px solid #cbd5e1;
+  white-space: nowrap;
+}
+
+.styled-grant-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.styled-grant-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.project-title-cell {
+  min-width: 250px;
+  line-height: 1.4;
+}
+
+/* Helpers & Badges */
+.font-semibold { font-weight: 600; color: #0f172a; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+.category-chip {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: #475569;
+}
+.category-chip.national { background: #e0f2fe; color: #0369a1; }
+.category-chip.industry { background: #fef3c7; color: #92400e; }
+.category-chip.international { background: #f3e8ff; color: #6b21a8; }
+.category-chip.matching-funding { background: #fae8ff; color: #86198f; }
+
+.status-pill {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-transform: capitalize;
+}
+.status-pill.active { background: #dcfce7; color: #15803d; }
+.status-pill.completed { background: #e2e8f0; color: #475569; }
+
+/* Footer */
+.table-modal-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  background: #f8fafc;
+}
+
+.button-secondary {
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.button-secondary:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}

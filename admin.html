@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RMC Knowledge Hub Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- ===== ADMIN-A | ADMIN-PAGE-ONLY STYLES ===== -->
+  <style>
+    body { background: #f4f7fb; }
+    .admin-shell { padding: 110px 0 70px; }
+    .admin-top { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 30px; }
+    .admin-top h1 { font-family: Space Grotesk; font-size: 42px; margin: 4px 0; }
+    .admin-grid { display: grid; grid-template-columns: 360px 1fr; gap: 20px; }
+    .admin-card { background: #fff; border: 1px solid #dfe5ef; border-radius: 22px; padding: 24px; box-shadow: 0 10px 36px rgba(9,32,74,.05); }
+    .admin-card input[type=password],
+    .admin-card input[type=file] { width: 100%; padding: 11px; border: 1px solid #d6dfeb; border-radius: 10px; margin: 8px 0 14px; }
+    .upload-zone { padding: 18px; border: 1px dashed #9fb1ca; border-radius: 14px; background: #f8fbff; }
+    .admin-note { font-size: 11px; line-height: 1.6; color: #65728c; }
+    .doc-row { display: grid; grid-template-columns: 1fr 110px 80px; gap: 10px; padding: 13px 0; border-bottom: 1px solid #edf0f5; align-items: center; }
+    .doc-row small { color: #718099; }
+    .danger { border: 0; background: #fff0f1; color: #b32435; border-radius: 9px; padding: 7px 9px; cursor: pointer; }
+    .status-pill { font-size: 9px; text-transform: uppercase; font-weight: 800; padding: 5px 7px; border-radius: 99px; background: #eef3ff; color: #245ad5; width: max-content; }
+    .admin-status { font-size: 12px; color: #526783; margin-top: 10px; }
+
+    @media (max-width: 800px) {
+      .admin-grid { grid-template-columns: 1fr; }
+      .admin-top { align-items: flex-start; flex-direction: column; }
+      .doc-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== ADMIN-B | HEADER ===== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/">
+        <div class="brand-mark">A</div>
+        <div class="brand-text">
+          <strong>AIMST UNIVERSITY</strong>
+          <span>RMC · Knowledge Hub Admin</span>
+        </div>
+      </a>
+      <a class="button button-sm button-primary" href="/">Back to site</a>
+    </div>
+  </header>
+
+  <!-- ===== ADMIN-C | MAIN CONTROL PANEL ===== -->
+  <main class="admin-shell">
+    <div class="container">
+      <div class="admin-top">
+        <div>
+          <span class="eyebrow dark">CONTROL PANEL</span>
+          <h1>RMC Knowledge Hub</h1>
+          <p class="admin-note">Upload only approved, current documents intended for the AI assistant.</p>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <!-- ADMIN-C1 | Access + upload -->
+        <section class="admin-card">
+          <h2>Admin access</h2>
+          <label>
+            Admin token
+            <input id="token" type="password" placeholder="Enter ADMIN_TOKEN">
+          </label>
+          <button class="button button-primary full" id="connect">Connect</button>
+          <div class="admin-status" id="status">Not connected.</div>
+
+          <hr style="border:0;border-top:1px solid #edf0f5;margin:24px 0">
+
+          <h2>Add documents</h2>
+          <form id="uploadForm">
+            <div class="upload-zone">
+              <input type="file" id="docs" name="documents" multiple accept=".pdf,.doc,.docx,.txt,.md,.rtf,.ppt,.pptx,.csv,.html,.htm">
+              <p class="admin-note">PDF, DOC/DOCX, TXT, Markdown, RTF, PPT/PPTX, CSV or HTML. Maximum 10 files per upload, 25 MB each.</p>
+            </div>
+            <button class="button button-primary full" style="margin-top:12px">Upload to knowledge base</button>
+          </form>
+        </section>
+
+        <!-- ADMIN-C2 | Indexed documents -->
+        <section class="admin-card">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+            <div>
+              <span class="eyebrow dark">APPROVED SOURCES</span>
+              <h2>Indexed documents</h2>
+            </div>
+            <button class="tab" id="refresh">Refresh</button>
+          </div>
+          <div id="documents">
+            <p class="admin-note">Connect to view documents.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== ADMIN-D | ADMIN FUNCTIONALITY ===== -->
+  <script>
+    /* ADMIN-D1 | Element connections */
+    const tokenEl = document.getElementById("token");
+    const statusEl = document.getElementById("status");
+    const docsEl = document.getElementById("documents");
+
+    const headers = () => ({ "x-admin-token": tokenEl.value.trim() });
+
+    /* ADMIN-D2 | Display / refresh indexed documents */
+    async function loadDocs() {
+      statusEl.textContent = "Loading…";
+      const response = await fetch("/api/admin/documents", { headers: headers() });
+      const data = await response.json();
+
+      if (!response.ok) {
+        statusEl.textContent = data.error || "Could not connect.";
+        return;
+      }
+
+      statusEl.textContent = "Connected.";
+      docsEl.innerHTML = "";
+
+      if (!data.documents.length) {
+        docsEl.innerHTML = '<p class="admin-note">No documents have been added yet.</p>';
+        return;
+      }
+
+      data.documents.forEach(doc => {
+        const row = document.createElement("div");
+        row.className = "doc-row";
+
+        const name = document.createElement("div");
+        name.innerHTML = `<strong>${escapeHtml(doc.filename)}</strong><br><small>${escapeHtml(doc.file_id)}</small>`;
+
+        const state = document.createElement("span");
+        state.className = "status-pill";
+        state.textContent = doc.status || "unknown";
+
+        const removeButton = document.createElement("button");
+        removeButton.className = "danger";
+        removeButton.textContent = "Remove";
+        removeButton.onclick = () => removeDoc(doc.file_id);
+
+        row.append(name, state, removeButton);
+        docsEl.appendChild(row);
+      });
+    }
+
+    /* ADMIN-D3 | Small safe HTML helper */
+    function escapeHtml(value) {
+      const element = document.createElement("div");
+      element.textContent = value || "";
+      return element.innerHTML;
+    }
+
+    /* ADMIN-D4 | Remove a document */
+    async function removeDoc(id) {
+      if (!confirm("Remove this document from the RMC AI knowledge base?")) return;
+
+      const response = await fetch("/api/admin/documents/" + encodeURIComponent(id), {
+        method: "DELETE",
+        headers: headers()
+      });
+      const data = await response.json();
+
+      if (!response.ok) alert(data.error || "Could not remove.");
+      else loadDocs();
+    }
+
+    /* ADMIN-D5 | Button/form events */
+    document.getElementById("connect").onclick = loadDocs;
+    document.getElementById("refresh").onclick = loadDocs;
+
+    document.getElementById("uploadForm").onsubmit = async event => {
+      event.preventDefault();
+
+      const files = document.getElementById("docs").files;
+      if (!files.length) return alert("Choose at least one document.");
+
+      const formData = new FormData();
+      [...files].forEach(file => formData.append("documents", file));
+
+      statusEl.textContent = "Uploading…";
+      const response = await fetch("/api/admin/upload", {
+        method: "POST",
+        headers: headers(),
+        body: formData
+      });
+      const data = await response.json();
+
+      statusEl.textContent = response.ok ? data.message : (data.error || "Upload failed.");
+
+      if (response.ok) {
+        document.getElementById("docs").value = "";
+        setTimeout(loadDocs, 1000);
+      }
+    };
+  </script>
+</body>
+</html>

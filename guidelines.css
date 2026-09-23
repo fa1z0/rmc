@@ -1,0 +1,165 @@
+/* Modal Overlay */
+.guideline-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 2000;
+  padding: 1.5rem;
+}
+
+.guideline-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Window Container */
+.guideline-modal-container {
+  background: #ffffff;
+  width: 95%;
+  max-width: 900px;
+  max-height: 90vh;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: modalSlideUp 0.3s ease-out forwards;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Header */
+.guideline-modal-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fdf4ff;
+}
+
+.guideline-modal-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #86198f;
+  letter-spacing: 0.05em;
+}
+
+.guideline-modal-header h2 {
+  margin: 0.25rem 0 0 0;
+  font-size: 1.3rem;
+  color: #0f172a;
+}
+
+.guideline-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  color: #64748b;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.guideline-modal-close:hover {
+  color: #0f172a;
+}
+
+/* Body & Table */
+.guideline-modal-body {
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.styled-guideline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: #334155;
+  text-align: left;
+}
+
+.styled-guideline-table th {
+  background-color: #fae8ff;
+  color: #701a75;
+  font-weight: 700;
+  padding: 0.9rem 1rem;
+  border-bottom: 2px solid #f0abfc;
+  white-space: nowrap;
+}
+
+.styled-guideline-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.styled-guideline-table tbody tr:hover {
+  background-color: #fdf4ff;
+}
+
+.font-semibold { font-weight: 600; color: #0f172a; }
+
+.guideline-link {
+  color: #9333ea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.guideline-link:hover {
+  text-decoration: underline;
+}
+
+/* Custom Paragraph Styling Below Table */
+.custom-guideline-paragraph {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background-color: #f8fafc;
+  border-left: 4px solid #a855f7;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* Footer */
+.guideline-modal-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  background: #f8fafc;
+}
+
+.button-secondary {
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button-secondary:hover {
+  background: #f1f5f9;
+}

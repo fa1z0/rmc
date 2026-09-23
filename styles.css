@@ -1,0 +1,3300 @@
+/* ==========================================================================
+   AIMST RMC WEBSITE — MAIN STYLESHEET
+
+   EDITING ORDER
+   This file follows the same TOP → BOTTOM order as index.html.
+
+   00  Global foundation & shared utilities
+   01  Header / navigation
+   02  Hero
+   03  Statistics
+   04  Research support services
+   05  Funding opportunities
+   06  Research Explorer
+   07  Research impact
+   08  Centres & innovation pipeline
+   09  Global Research Network
+   10  Resources / news / leadership
+   11  My RMC
+   12  Ask RMC AI
+   13  Footer
+   14  Responsive adjustments
+   ========================================================================== */
+
+
+/*
+   SAFE EDITING RULE
+   -----------------
+   The CSS follows the visible webpage from RMC-01 at the top to RMC-13 at
+   the bottom. Search the SAME RMC number in index.html and script.js.
+
+   RMC-00 = shared/global styles used by several sections.
+   RMC-14 = responsive/mobile adjustments, also kept in page order.
+*/
+
+/* ==========================================================================
+   RMC-00 | GLOBAL FOUNDATION & SHARED UTILITIES
+   ========================================================================== */
+
+:root {
+  --navy: #06162f;
+  --navy-2: #0b2147;
+  --red: #ef3340;
+  --cyan: #16d5e3;
+  --blue: #4a7cff;
+  --purple: #8d5bff;
+  --ink: #14213d;
+  --muted: #65728c;
+  --line: #dfe5ef;
+  --soft: #f4f7fb;
+  --white: #fff;
+  --radius: 22px;
+  --shadow: 0 22px 60px rgba(9, 32, 74, 0.12);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--ink);
+  background: #fff;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button,
+select {
+  font: inherit;
+}
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: auto;
+}
+.page-noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: radial-gradient(#000 0.7px, transparent 0.7px);
+  background-size: 7px 7px;
+  z-index: 50;
+}
+
+.section {
+  padding: 90px 0;
+}
+.section-soft {
+  background: var(--soft);
+}
+.section-heading {
+  margin-bottom: 35px;
+}
+.section-heading.centered {
+  text-align: center;
+  max-width: 730px;
+  margin: 0 auto 38px;
+}
+.section h2,
+.research-map h2,
+.myrmc h2 {
+  font-family: "Space Grotesk";
+  font-size: 38px;
+  letter-spacing: -0.04em;
+  margin: 0 0 10px;
+  color: var(--navy);
+}
+.section-heading p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.hidden-grant {
+  display: none !important;
+}
+
+.hidden-grant2 {
+  display: none !important;
+}
+
+/* ==========================================================================
+   RMC-01 | HEADER / NAVIGATION
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 40;
+  background: rgba(3, 14, 32, 0.84);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.nav-wrap {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  min-width: 265px;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--cyan);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: var(--cyan);
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.08;
+}
+.brand-text strong {
+  font-size: 12px;
+}
+.brand-text span {
+  font-size: 10px;
+  opacity: 0.65;
+}
+.brand img {
+  height: 76px;
+  width: auto;
+  display: block;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  margin-left: auto;
+}
+.nav a {
+  color: #dfe8f7;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.nav a:hover {
+  color: white;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 13px;
+  border: 1px solid transparent;
+  transition: 0.25s ease;
+}
+.button-sm {
+  padding: 10px 14px;
+  font-size: 11px;
+}
+.button-primary {
+  background: linear-gradient(135deg, var(--red), #ff594f);
+  color: white;
+  box-shadow: 0 12px 28px rgba(239, 51, 64, 0.28);
+}
+.button-primary:hover {
+  transform: translateY(-2px);
+}
+.button-ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+}
+.button-light {
+  background: #fff;
+  color: var(--navy);
+}
+.full {
+  width: 100%;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 24px;
+}
+
+/* ==========================================================================
+   RMC-02 | HERO
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 680px;
+  padding: 150px 0 100px;
+  background: radial-gradient(
+      circle at 75% 42%,
+      rgba(22, 213, 227, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(circle at 68% 18%, rgba(141, 91, 255, 0.2), transparent 25%),
+    linear-gradient(135deg, #041225, #071b3a 55%, #08204a);
+  overflow: hidden;
+}
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to right, transparent, black 35%, black);
+}
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.3;
+}
+.orb-a {
+  width: 320px;
+  height: 320px;
+  right: 8%;
+  top: 15%;
+  background: radial-gradient(circle, #2b7cff, transparent 65%);
+}
+.orb-b {
+  width: 260px;
+  height: 260px;
+  right: 24%;
+  bottom: 4%;
+  background: radial-gradient(circle, #ef3340, transparent 68%);
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+}
+.eyebrow {
+  display: inline-block;
+  color: #82eaf2;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.eyebrow.dark {
+  color: #5c6f95;
+}
+.hero h1 {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 72px;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #fff;
+}
+.hero h1 span {
+  color: var(--red);
+}
+.hero p {
+  color: #cbd6e9;
+  font-size: 18px;
+  max-width: 570px;
+  line-height: 1.7;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+.hero-visual {
+  display: grid;
+  place-items: center;
+}
+.network-sphere {
+  width: 430px;
+  height: 430px;
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(26, 107, 255, 0.22),
+    rgba(8, 23, 53, 0.15) 35%,
+    transparent 68%
+  );
+}
+.sphere-ring {
+  position: absolute;
+  border: 1px solid rgba(84, 207, 255, 0.36);
+  border-radius: 50%;
+  inset: 35px;
+  animation: spin 16s linear infinite;
+}
+.ring-2 {
+  inset: 80px;
+  transform: rotate(62deg);
+  border-color: rgba(239, 51, 64, 0.45);
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+.ring-3 {
+  inset: 120px;
+  transform: rotate(25deg);
+  border-color: rgba(141, 91, 255, 0.6);
+  animation-duration: 9s;
+}
+.sphere-core {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 800;
+  font-size: 30px;
+  text-shadow: 0 0 24px var(--cyan);
+}
+.node {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 22px currentColor;
+}
+.n1 {
+  left: 12%;
+  top: 34%;
+}
+.n2 {
+  right: 14%;
+  top: 28%;
+  background: var(--red);
+}
+.n3 {
+  left: 28%;
+  bottom: 12%;
+  background: var(--purple);
+}
+.n4 {
+  right: 23%;
+  bottom: 18%;
+}
+.n5 {
+  left: 47%;
+  top: 7%;
+  background: var(--blue);
+}
+.n6 {
+  right: 5%;
+  bottom: 42%;
+  background: var(--red);
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   RMC-03 | STATISTICS
+   ========================================================================== */
+
+.stats-shell {
+  margin-top: -48px;
+  position: relative;
+  z-index: 5;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  background: white;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 22px 10px;
+}
+.stats article {
+  padding: 10px 18px;
+  border-right: 1px solid var(--line);
+}
+.stats article:last-child {
+  border-right: 0;
+}
+.stats strong {
+  display: block;
+  font-size: 22px;
+  color: var(--navy);
+}
+.stats span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   RMC-04 | RESEARCH SUPPORT SERVICES
+   ========================================================================== */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.service-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 25px;
+  box-shadow: 0 10px 32px rgba(9, 32, 74, 0.05);
+  transition: 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: #c5d3e6;
+}
+.service-card .icon {
+  font-size: 28px;
+}
+.service-card h3 {
+  font-size: 17px;
+  margin: 14px 0 8px;
+}
+.service-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  min-height: 64px;
+}
+.service-card a {
+  font-size: 13px;
+  color: #1e5bd8;
+  font-weight: 800;
+}
+.service-grid button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
+ text-decoration: none;
+ background: transparent;
+ padding: 0;
+ font-size: 13px;
+ font-family: inherit;
+}
+.service-grid button.learn-more {
+ width: 11.5rem;
+ height: 2.7rem;
+}
+.service-grid button.learn-more .circle {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: relative;
+ display: block;
+ margin: 0;
+ width: 2rem;
+ height: 2rem;
+ /* background: #282936; */
+ background: #1e5bd8;
+ border-radius: 1.625rem;
+}
+.service-grid button.learn-more .circle .icon {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ background: #fff;
+}
+.service-grid button.learn-more .circle .icon.arrow {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ /* left: 0.625rem;
+ width: 1.125rem;
+ height: 0.125rem; */
+ left: 0.225rem;
+ width: 1.125rem;
+ height: 0.125rem;
+ background: none;
+}
+.service-grid button.learn-more .circle .icon.arrow::before {
+ position: absolute;
+ content: "";
+ top: -0.29rem;
+ right: 0.0625rem;
+ width: 0.625rem;
+ height: 0.625rem;
+ border-top: 0.125rem solid #fff;
+ border-right: 0.125rem solid #fff;
+ transform: rotate(45deg);
+}
+.service-grid button.learn-more .button-text {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ padding: 0.75rem 0;
+ margin: 0 0 0 1.85rem;
+ /* color: #282936; */
+ color: #1e5bd8;
+ font-weight: 700;
+ line-height: 1.6;
+ text-align: center;
+ /* text-transform: uppercase; */
+}
+.service-grid button:hover .circle {
+ width: 100%;
+}
+.service-grid button:hover .circle .icon.arrow {
+ background: #fff;
+ transform: translate(1rem, 0);
+}
+.service-grid button:hover .button-text {
+ color: #fff;
+}
+/* ==========================================================================
+   RMC-05 | FUNDING OPPORTUNITIES
+   ========================================================================== */
+
+.funding-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 28px;
+}
+.grant-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.tab {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 9px 13px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.tab.active {
+  background: var(--navy);
+  color: #fff;
+}
+.grant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.grant-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+}
+.grant-card h3 {
+  margin: 10px 0 3px;
+}
+.grant-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.status {
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 6px 8px;
+  border-radius: 7px;
+}
+.status.open {
+  color: #16733a;
+  background: #e9f9ef;
+}
+.status.soon {
+  color: #9a5b00;
+  background: #fff2d5;
+}
+.status.list-of-grants {
+  color: #245ad5;
+  background: #eaf0ff;
+}
+.status.guideline {
+  color: #701a75;
+  background: #fae8ff;
+}
+.grant-card dl {
+  display: flex;
+  gap: 20px;
+}
+.grant-card dl div {
+  display: flex;
+  flex-direction: column;
+}
+.grant-card dt {
+  font-size: 10px;
+  color: var(--muted);
+}
+.grant-card dd {
+  margin: 3px 0;
+  font-size: 12px;
+  font-weight: 800;
+}
+.text-button {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: #1d5bd7;
+  font-weight: 800;
+  font-size: 11px;
+  cursor: pointer;
+}
+.grant-finder {
+  background: linear-gradient(180deg, #0b2452, #071936);
+  color: white;
+  border-radius: 22px;
+  padding: 25px;
+  align-self: start;
+  position: sticky;
+  top: 96px;
+}
+.grant-finder h3 {
+  font-size: 28px;
+  margin: 2px 0;
+}
+.grant-finder p {
+  color: #c8d4e9;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.grant-finder label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 16px;
+}
+.grant-finder select {
+  width: 100%;
+  padding: 11px;
+  border-radius: 10px;
+  border: 0;
+  margin-top: 6px;
+  background: #fff;
+  color: var(--ink);
+}
+.grant-finder button {
+  display: block;
+  margin-top: 18px;
+}
+
+/* ==========================================================================
+   RMC-055 | LIST OF GRANTS
+   ========================================================================== */
+
+.grant-layout-2 {
+  display: grid;
+  grid-template-columns: inherit;
+  /* grid-template-columns: 1fr 280px; */
+  gap: 28px;
+}
+.grant-tabs-2 {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.tab2 {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 9px 13px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.tab2.active {
+  background: var(--navy);
+  color: #fff;
+}
+.grant-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.grant-card2 {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+}
+.grant-card2 h3 {
+  margin: 10px 0 3px;
+}
+.grant-card2 p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.status-2 {
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 6px 8px;
+  border-radius: 7px;
+}
+.title {
+  display: block;
+  font-size: 9px;
+  text-transform: capitalize;
+  font-weight: 800;
+  padding: 6px 0px;
+  /* border-radius: 7px; */
+  color: var(--muted);
+  margin-top: 6px;
+}
+.status-2.external {
+  color: #16733a;
+  background: #e9f9ef;
+}
+.status-2.internal {
+  color: #9a5b00;
+  background: #fff2d5;
+}
+.status-2.2024 {
+  color: #245ad5;
+  background: #eaf0ff;
+}
+.grant-card2 dl {
+  display: flex;
+  gap: 20px;
+}
+.grant-card2 dl div {
+  display: flex;
+  flex-direction: column;
+}
+.grant-card2 dt {
+  font-size: 10px;
+  color: var(--muted);
+}
+.grant-card2 dd {
+  margin: 3px 0;
+  font-size: 12px;
+  font-weight: 800;
+}
+.text-button {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: #1d5bd7;
+  font-weight: 800;
+  font-size: 11px;
+  cursor: pointer;
+}
+/* ==========================================================================
+   RMC-06 | RESEARCH EXPLORER
+   ========================================================================== */
+
+/* =========================================================
+   AIMST RESEARCH EXPLORER V2
+   ========================================================= */
+
+.research-explorer-v2 {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0;
+  background:
+    radial-gradient(
+      circle at 72% 50%,
+      rgba(41, 126, 255, 0.12),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #06152e 0%,
+      #082653 100%
+    );
+}
+
+
+.research-explorer-layout {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  align-items: center;
+  gap: 60px;
+}
+
+
+.research-explorer-copy {
+  color: #ffffff;
+}
+
+
+.research-explorer-copy .eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  color: #4ce7f3;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+
+.research-explorer-copy h2 {
+  margin: 0 0 16px;
+  max-width: 520px;
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+
+.research-explorer-copy p {
+  max-width: 500px;
+  margin: 0;
+  color: #c9d8ed;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+
+.research-explorer-main-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 26px;
+  padding: 15px 20px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #081b3a;
+
+  font-weight: 800;
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.research-explorer-main-btn span {
+  color: #ef3340;
+  font-size: 20px;
+}
+
+
+.research-explorer-main-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+
+/* =========================================================
+   STAGE
+   ========================================================= */
+
+.research-explorer-stage {
+  min-width: 0;
+}
+
+
+.research-category-view,
+.research-expanded-view {
+  transition:
+    opacity 0.4s ease,
+    transform 0.5s ease;
+}
+
+
+.research-category-view {
+  position: relative;
+  min-height: 540px;
+}
+
+
+.research-category-view:not(.active) {
+  display: none;
+}
+
+
+.research-select-label {
+  margin: 0 0 8px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+}
+
+
+
+/* =========================================================
+   CATEGORY ORBIT
+   ========================================================= */
+
+.research-category-orbit {
+  position: relative;
+  width: min(620px, 100%);
+  aspect-ratio: 1.35 / 1;
+  margin: 0 auto;
+}
+
+
+.research-category-orbit::before,
+.research-category-orbit::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.research-category-orbit::before {
+  width: 88%;
+  height: 74%;
+
+  border:
+    1px dashed
+    rgba(54, 212, 235, 0.23);
+}
+
+
+.research-category-orbit::after {
+  width: 66%;
+  height: 54%;
+
+  border:
+    1px dashed
+    rgba(239, 51, 64, 0.22);
+}
+
+
+
+/* CENTRE */
+
+.research-centre-node {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 132px;
+  height: 132px;
+
+  transform: translate(-50%, -50%);
+
+  /* display: grid;
+  place-items: center; */
+
+  display: flex;
+    align-items: center;
+    justify-content: center;
+
+  /* Remove normal button styling */
+    padding: 0;
+    border: none;
+    outline: none;
+
+  border-radius: 50%;
+
+  /* border:
+    1px solid
+    rgba(51, 202, 236, 0.55); */
+    
+  /* box-shadow:
+    0 0 0 18px rgba(12, 61, 110, 0.16),
+    0 0 0 38px rgba(12, 61, 110, 0.09); */
+
+  /* Dark red centre */
+    background:
+        radial-gradient(
+            circle at 50% 48%,
+            #ff4a55 0%,
+            #ed1f2f 35%,
+            #bd1021 65%,
+            /* #790815 100% */
+        );
+
+
+   /* Main glow */
+   box-shadow:
+    /* inner red glow */
+        inset 0 0 18px rgba(252, 252, 252, 0.65),
+
+        /* close glow */
+        0 0 10px rgba(235, 232, 232, 0.95),
+
+        /* medium glow */
+        0 0 28px rgba(248, 248, 248, 0.85),
+
+        /* large atmospheric glow */
+        0 0 55px rgba(255, 255, 255, 0.48),
+
+        /* very large soft glow */
+        0 0 90px rgba(255, 255, 255, 0.22);
+
+  z-index: 3;
+
+  transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
+
+    animation:
+        healthNodePulse 3s ease-in-out infinite;
+}
+
+
+.research-centre-inner {
+  width: 88px;
+  height: 88px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+  text-align: center;
+}
+
+
+.research-centre-icon {
+  color: #29d4e5;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+
+.research-centre-inner strong {
+  margin-top: 5px;
+
+  font-size: 12px;
+  line-height: 1.15;
+}
+
+
+
+/* =========================================================
+   RED CATEGORY NODES
+   ========================================================= */
+/* 
+.research-category-node {
+  position: absolute;
+
+  width: 116px;
+  height: 116px;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fb4351,
+      #cf1f30 68%,
+      #a81527
+    );
+
+  color: #ffffff;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 26px rgba(239, 51, 64, 0.26);
+
+  z-index: 5;
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    filter 0.28s ease;
+} */
+
+/* Base Orbit Node Styling */
+.research-category-node {
+  position: absolute;
+  width: 116px;
+  height: 116px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+  
+  /* Fallback Theme Variables */
+  --node-color: rgba(255, 35, 35);
+  --node-gradient-mid: #cf1f30;
+  /* --node-gradient-dark: #a81527; */
+  /* --node-gradient-dark: #790815; */
+
+  /* Dynamic Radial Gradient & Glow */
+  border: 2px solid rgba(255, 210, 210);
+  background: radial-gradient(
+    circle at 50% 48%,
+    /* var(--node-color), */
+    /* var(--node-gradient-mid) 68%, */
+    var(--node-gradient-dark)
+  );
+  /* box-shadow: 0 0 26px var(--node-color), inset 0 0 10px rgba(255, 255, 255, 0.2); */
+  box-shadow: 0 0 6px var(--node-color),
+  0 0 18px var(--node-color),
+  0 0 30px rgba(255, 35, 55, 0.48), 
+  inset 0 0 10px var(--node-color)
+  ;
+}
+
+.research-category-node:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px var(--node-color), inset 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================
+   INDIVIDUAL CATEGORY COLOR PALETTES
+   ========================================== */
+
+/* 1. Health & Clinical Sciences - Red/Coral */
+.node-health {
+  /* --node-color: #ff3b5c; */
+  /* --node-gradient-mid: #d91b3e; */
+  --node-gradient-dark: #790815;
+}
+
+/* 2. Biotechnology - Cyan/Teal */
+.node-biotech {
+  --node-color: #00f2fe;
+  --node-gradient-mid: #0099ff;
+  --node-gradient-dark: #002b5c;
+}
+
+/* 3. Pharmaceutical Research - Aqua/Blue */
+.node-pharma {
+  --node-color: #00d2ff;
+  --node-gradient-mid: #0072ff;
+  --node-gradient-dark: #091540;
+}
+
+/* 4. AI & Data Science - Emerald/Cyan */
+.node-ai {
+  --node-color: #00f5a0;
+  --node-gradient-mid: #00d992;
+  --node-gradient-dark: #003f2a;
+}
+
+/* 5. Engineering & Technology - Amber/Orange */
+.node-engineering {
+  --node-color: #ff9900;
+  --node-gradient-mid: #e65c00;
+  --node-gradient-dark: #4e1f00;
+}
+
+/* 6. Public Health - Teal/Cyan */
+.node-publichealth {
+  --node-color: #00e5ff;
+  --node-gradient-mid: #0097a7;
+  --node-gradient-dark: #013238;
+}
+
+/* 7. Environment & Sustainability - Bright Green */
+.node-environment {
+  --node-color: #39ff14;
+  --node-gradient-mid: #28b80e;
+  --node-gradient-dark: #093303;
+}
+
+/* 8. Social Sciences - Purple/Violet */
+.node-social {
+  --node-color: #b537f2;
+  --node-gradient-mid: #7b1fa2;
+  --node-gradient-dark: #2e0a5a;
+}
+
+
+
+/* .research-category-node:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 38px rgba(239, 51, 64, 0.55);
+
+  filter: brightness(1.08);
+} */
+
+
+.category-icon {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 23px;
+  font-weight: 900;
+}
+
+
+.research-category-node > span:last-child {
+  font-size: 10px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+
+
+/* NODE POSITIONS */
+
+.node-health {
+  top: 3%;
+  left: 41%;
+}
+
+
+.node-biotech {
+  top: 13%;
+  left: 17%;
+}
+
+
+.node-pharma {
+  top: 13%;
+  right: 15%;
+}
+
+
+.node-ai {
+  top: 39%;
+  right: -1%;
+}
+
+
+.node-engineering {
+  bottom: 4%;
+  right: 9%;
+}
+
+
+.node-publichealth {
+  bottom: -4%;
+  left: 42%;
+}
+
+
+.node-environment {
+  bottom: 4%;
+  left: 15%;
+}
+
+
+.node-social {
+  top: 40%;
+  left: 1%;
+}
+
+
+
+/* CLICK HINT */
+
+.research-click-hint {
+  position: absolute;
+
+  right: -155px;
+  top: 44%;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  color: #d9e5f5;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+.research-click-icon {
+  font-size: 25px;
+}
+
+
+
+/* =========================================================
+   EXPANDED VIEW
+   ========================================================= */
+
+.research-expanded-view {
+  display: none;
+}
+
+
+.research-expanded-view.active {
+  display: block;
+
+  animation:
+    researchExpandedSlide
+    0.55s ease both;
+}
+
+
+@keyframes researchExpandedSlide {
+
+  from {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+.research-back-btn {
+  margin-bottom: 18px;
+
+  border: 0;
+  background: transparent;
+
+  color: #d8e7f6;
+
+  cursor: pointer;
+
+  font-weight: 700;
+}
+
+
+.research-back-btn:hover {
+  color: #ffffff;
+}
+
+
+
+/* PANEL */
+
+.research-expanded-panel {
+  padding: 24px;
+
+  border:
+    1px solid rgba(91, 201, 238, 0.42);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5, 27, 63, 0.62),
+      rgba(17, 33, 74, 0.70)
+    );
+
+  box-shadow:
+    inset 0 0 40px rgba(20, 112, 182, 0.06),
+    0 24px 65px rgba(0, 0, 0, 0.16);
+}
+
+
+
+/* HEADER */
+
+.research-expanded-header {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+
+
+/* EXPANDED ORBIT */
+
+.research-expanded-orbit {
+  position: relative;
+
+  width: 210px;
+  height: 210px;
+
+  display: grid;
+  place-items: center;
+}
+
+
+.expanded-orbit-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(239, 51, 64, 0.50);
+}
+
+
+.ring-one {
+  width: 140px;
+  height: 140px;
+}
+
+
+.ring-two {
+  width: 170px;
+  height: 170px;
+}
+
+
+.ring-three {
+  width: 200px;
+  height: 200px;
+}
+
+
+.expanded-main-node {
+  position: relative;
+
+  width: 128px;
+  height: 128px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fb4351,
+      #cb1f2e 75%
+    );
+
+  box-shadow:
+    0 0 30px rgba(239, 51, 64, 0.38);
+
+  z-index: 3;
+}
+
+
+.expanded-main-icon {
+  margin-bottom: 6px;
+
+  font-size: 25px;
+  font-weight: 900;
+}
+
+
+.expanded-main-node strong {
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+
+
+/* CONTENT */
+
+.expanded-small-label {
+  color: #4ce7f3;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+
+.research-expanded-content h3 {
+  margin: 6px 0 7px;
+
+  color: #ffffff;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 26px;
+}
+
+
+.research-expanded-content > p {
+  max-width: 670px;
+
+  margin: 0 0 20px;
+
+  color: #c5d5e9;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+
+/* RESEARCH AREAS */
+
+.research-areas-section h4,
+.expanded-column h4 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+  font-size: 13px;
+}
+
+
+.research-area-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.10);
+}
+
+
+.research-area-item {
+  min-width: 0;
+
+  padding: 14px 10px;
+
+  text-align: center;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  color: #d7e4f3;
+}
+
+
+.research-area-item:last-child {
+  border-right: 0;
+}
+
+
+.research-area-icon {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #ffffff;
+
+  font-size: 21px;
+}
+
+
+.research-area-item strong {
+  display: block;
+
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+
+
+/* BOTTOM */
+
+.research-expanded-bottom {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr 180px;
+
+  gap: 26px;
+
+  margin-top: 22px;
+}
+
+
+.expanded-column ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.expanded-column li {
+  position: relative;
+
+  margin-bottom: 9px;
+  padding-left: 17px;
+
+  color: #cad8e9;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+.expanded-column li::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+
+  color: #ef3340;
+  font-weight: 900;
+}
+
+
+
+/* STATS */
+
+.expanded-stats {
+  padding: 16px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 15px;
+
+  background:
+    rgba(3, 16, 40, 0.24);
+}
+
+
+.expanded-stats div {
+  padding: 9px 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.expanded-stats div:last-child {
+  border-bottom: 0;
+}
+
+
+.expanded-stats strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 19px;
+}
+
+
+.expanded-stats span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #9eb0c7;
+
+  font-size: 9px;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1180px) {
+
+  .research-click-hint {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 980px) {
+
+  .research-explorer-layout {
+    grid-template-columns: 1fr;
+  }
+
+
+  .research-explorer-copy {
+    max-width: 650px;
+  }
+
+
+  .research-expanded-header {
+    grid-template-columns: 1fr;
+  }
+
+
+  .research-expanded-orbit {
+    margin: 0 auto;
+  }
+
+
+  .research-expanded-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .expanded-stats {
+    grid-column: 1 / -1;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 10px;
+  }
+
+  .grant-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 720px) {
+
+  .research-explorer-v2 {
+    padding: 65px 0;
+  }
+
+
+  .research-category-view {
+    min-height: 660px;
+  }
+
+
+  .research-category-orbit {
+    width: 100%;
+    height: 630px;
+    aspect-ratio: auto;
+  }
+
+
+  .research-centre-node {
+    width: 110px;
+    height: 110px;
+  }
+
+
+  .research-category-node {
+    width: 100px;
+    height: 100px;
+  }
+
+
+  .node-health {
+    top: 4%;
+    left: calc(50% - 50px);
+  }
+
+
+  .node-biotech {
+    top: 20%;
+    left: 5%;
+  }
+
+
+  .node-pharma {
+    top: 20%;
+    right: 5%;
+  }
+
+
+  .node-ai {
+    top: 46%;
+    right: 2%;
+  }
+
+
+  .node-engineering {
+    bottom: 9%;
+    right: 7%;
+  }
+
+
+  .node-publichealth {
+    bottom: 2%;
+    left: calc(50% - 50px);
+  }
+
+
+  .node-environment {
+    bottom: 9%;
+    left: 7%;
+  }
+
+
+  .node-social {
+    top: 46%;
+    left: 2%;
+  }
+
+
+  .research-area-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .research-area-item {
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.10);
+  }
+
+
+  .research-expanded-bottom {
+    grid-template-columns: 1fr;
+  }
+
+
+  .expanded-stats {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ==========================================================================
+   RMC-07 | RESEARCH IMPACT
+   ========================================================================== */
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.story-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: white;
+}
+.story-visual {
+  height: 150px;
+}
+.visual-a {
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Xu7oQugJizaSIsqHno150Oquu8aV1DLtQoVRg1KhOw&s=10) center/cover no-repeat;
+}
+.visual-b {
+  background: radial-gradient(circle at 30% 30%, #92d35d, transparent 23%),
+    linear-gradient(135deg, #245b2a, #10271c);
+}
+.visual-c {
+  background: radial-gradient(circle at 70% 40%, #46a1ff, transparent 20%),
+    linear-gradient(135deg, #17275f, #07132f);
+}
+.visual-d {
+  background: radial-gradient(circle at 65% 45%, #ff7a59, transparent 20%),
+    linear-gradient(135deg, #1d315d, #091934);
+}
+.story-body {
+  padding: 18px;
+}
+.story-body h3 {
+  font-size: 15px;
+}
+.story-body p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.story-body a {
+  font-size: 11px;
+  color: #1d5bd7;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   RMC-08 | CENTRES & INNOVATION PIPELINE
+   ========================================================================== */
+
+.split-cards {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 20px;
+}
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 10px 36px rgba(9, 32, 74, 0.05);
+}
+.panel h2 {
+  font-size: 27px;
+}
+.mini-centres {
+  display: grid;
+  gap: 12px;
+}
+.mini-centres div {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.mini-centres strong,
+.mini-centres span {
+  display: block;
+}
+.mini-centres span {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 30px;
+}
+.pipeline div {
+  text-align: center;
+}
+.pipeline b {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: auto;
+  background: #eef3ff;
+  color: #245ad5;
+}
+.pipeline span {
+  font-size: 10px;
+  font-weight: 800;
+  display: block;
+  margin-top: 8px;
+}
+.pipeline i {
+  font-style: normal;
+  color: #9aa8bd;
+}
+
+/* ==========================================================================
+   RMC-09 | GLOBAL RESEARCH NETWORK
+   ========================================================================== */
+
+/* =====================================================
+   AIMST GLOBAL RESEARCH NETWORK
+   Accurate D3 World Map
+   ===================================================== */
+
+.global-section {
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(37, 132, 255, 0.08),
+      transparent 35%
+    ),
+    #ffffff;
+}
+
+
+/* HEADER */
+
+.global-heading {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 40px;
+
+  margin-bottom: 38px;
+
+}
+
+
+.global-heading > div:first-child {
+  max-width: 620px;
+}
+
+
+.global-heading h2 {
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 42px;
+
+  letter-spacing: -0.04em;
+
+  margin: 0 0 12px;
+
+  color: var(--navy);
+
+}
+
+
+.global-heading p {
+
+  color: var(--muted);
+
+  line-height: 1.7;
+
+  margin: 0;
+
+}
+
+
+/* STATS */
+
+.global-network-stats {
+
+  display: flex;
+
+  gap: 28px;
+
+}
+
+
+.global-network-stats div {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.global-network-stats strong {
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 28px;
+
+  color: var(--navy);
+
+}
+
+
+.global-network-stats span {
+
+  font-size: 10px;
+
+  color: var(--muted);
+
+  margin-top: 3px;
+
+}
+
+
+/* MAP LAYOUT */
+
+.research-map-shell {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    300px;
+
+  gap: 18px;
+
+}
+
+
+/* MAP CONTAINER */
+
+.research-map-container {
+
+  position: relative;
+
+  min-height: 520px;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  background:
+
+    radial-gradient(
+      circle at 72% 53%,
+      rgba(23, 211, 224, 0.10),
+      transparent 18%
+    ),
+
+    radial-gradient(
+      circle at 40% 35%,
+      rgba(66, 113, 255, 0.10),
+      transparent 34%
+    ),
+
+    linear-gradient(
+      145deg,
+      #06152d,
+      #08244e
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+
+  box-shadow:
+    0 30px 70px
+    rgba(6, 25, 55, 0.18);
+
+}
+
+
+/* GRID EFFECT */
+
+.research-map-container::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255,255,255,.025) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.025) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    36px 36px;
+
+  pointer-events: none;
+
+}
+
+
+/* SVG */
+
+#researchWorldMap {
+
+  display: block;
+
+  width: 100%;
+
+  height: 520px;
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+
+/* COUNTRIES */
+
+.map-country {
+
+  fill: #16345c;
+
+  stroke:
+    rgba(112, 163, 218, 0.35);
+
+  stroke-width: 0.55;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  transition:
+    fill 0.2s ease;
+
+}
+
+
+.map-country:hover {
+
+  fill: #1d4475;
+
+}
+
+
+/* INTERNATIONAL ROUTES */
+
+.research-route {
+
+  fill: none;
+
+  stroke:
+    rgba(31, 211, 226, .52);
+
+  stroke-width: 1.25;
+
+  stroke-dasharray:
+    5 7;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  animation:
+    researchRouteFlow
+    3.5s linear infinite;
+
+}
+
+
+@keyframes researchRouteFlow {
+
+  to {
+    stroke-dashoffset: -48;
+  }
+
+}
+
+
+/* RESEARCH PARTNER POINT */
+
+.partner-node {
+
+  cursor: pointer;
+
+}
+
+
+.partner-point {
+
+  fill: #23d6e6;
+
+  stroke: #ffffff;
+
+  stroke-width: 1.5;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  filter:
+    drop-shadow(
+      0 0 5px rgba(35,214,230,.8)
+    );
+
+  transition:
+    fill .2s ease;
+
+}
+
+
+.partner-hit-area {
+
+  fill: transparent;
+
+  cursor: pointer;
+
+}
+
+
+.partner-node:hover
+.partner-point {
+
+  fill: #ffffff;
+
+}
+
+
+/* AIMST MALAYSIA HUB */
+
+.aimst-hub-ring {
+
+  fill:
+    rgba(239, 51, 64, .12);
+
+  stroke: #ef3340;
+
+  stroke-width: 2;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  animation:
+    aimstMapPulse
+    2.2s ease-in-out infinite;
+
+}
+
+
+.aimst-hub {
+
+  fill: #ef3340;
+
+  stroke: #ffffff;
+
+  stroke-width: 2;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  filter:
+    drop-shadow(
+      0 0 7px
+      rgba(239,51,64,.9)
+    );
+
+}
+
+
+@keyframes aimstMapPulse {
+
+  0%,
+  100% {
+    opacity: .4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+}
+
+
+/* MAP TOOLBAR */
+
+.map-toolbar {
+
+  position: absolute;
+
+  top: 16px;
+
+  left: 18px;
+
+  right: 18px;
+
+  z-index: 6;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #cad7e8;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+}
+
+
+.map-toolbar > div {
+
+  display: flex;
+
+  gap: 5px;
+
+}
+
+
+.map-toolbar button {
+
+  min-width: 34px;
+
+  height: 34px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,.14);
+
+  background:
+    rgba(7,26,58,.75);
+
+  backdrop-filter:
+    blur(10px);
+
+  color: white;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+}
+
+
+.map-toolbar button:hover {
+
+  background:
+    rgba(255,255,255,.12);
+
+}
+
+
+/* TOOLTIP */
+
+.map-tooltip {
+
+  position: absolute;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  background:
+    rgba(5,18,42,.95);
+
+  color: #ffffff;
+
+  padding: 9px 11px;
+
+  border-radius: 9px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,.12);
+
+  font-size: 10px;
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -120%);
+
+  transition:
+    opacity .15s ease;
+
+  white-space: nowrap;
+
+}
+
+
+/* MAP LEGEND */
+
+.map-legend {
+
+  position: absolute;
+
+  z-index: 6;
+
+  left: 20px;
+
+  bottom: 17px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 17px;
+
+  color: #aabbd0;
+
+  font-size: 9px;
+
+}
+
+
+.map-legend span {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+}
+
+
+.map-legend i {
+
+  display: inline-block;
+
+}
+
+
+.legend-aimst {
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #ef3340;
+
+  box-shadow:
+    0 0 8px #ef3340;
+
+}
+
+
+.legend-partner {
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #23d6e6;
+
+  box-shadow:
+    0 0 8px #23d6e6;
+
+}
+
+
+.legend-route {
+
+  width: 20px;
+
+  border-top:
+    1px dashed #23d6e6;
+
+}
+
+
+/* INFORMATION PANEL */
+
+.research-map-info {
+
+  border-radius: 26px;
+
+  background:
+
+    linear-gradient(
+      150deg,
+      #ffffff,
+      #f6f9fd
+    );
+
+  border:
+    1px solid var(--line);
+
+  padding: 26px;
+
+  box-shadow:
+    0 15px 45px
+    rgba(7,27,60,.08);
+
+}
+
+
+.map-info-label {
+
+  display: block;
+
+  color: #607493;
+
+  font-size: 9px;
+
+  letter-spacing: .14em;
+
+  font-weight: 800;
+
+}
+
+
+.research-map-info h3 {
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  color: var(--navy);
+
+  font-size: 27px;
+
+  letter-spacing: -.035em;
+
+  margin:
+    10px 0 4px;
+
+}
+
+
+.network-institution {
+
+  color: #2d68cf;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  margin: 0 0 20px;
+
+}
+
+
+#networkDescription {
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.75;
+
+}
+
+
+.network-info-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 10px;
+
+  margin-top: 23px;
+
+}
+
+
+.network-info-grid div {
+
+  padding: 12px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: 12px;
+
+}
+
+
+.network-info-grid span {
+
+  display: block;
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+
+  letter-spacing: .08em;
+
+  color: #8090a8;
+
+}
+
+
+.network-info-grid strong {
+
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 11px;
+
+  color: var(--navy);
+
+}
+
+
+.network-prompt {
+
+  margin-top: 20px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid var(--line);
+
+  color: #8795aa;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+
+  .research-map-shell {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .global-heading {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+  }
+
+
+  .research-map-info {
+
+    display: grid;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 20px;
+
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .global-heading h2 {
+
+    font-size: 32px;
+
+  }
+
+
+  .global-network-stats {
+
+    gap: 18px;
+
+  }
+
+
+  #researchWorldMap {
+
+    height: 380px;
+
+  }
+
+
+  .research-map-container {
+
+    min-height: 380px;
+
+  }
+
+
+  .research-map-info {
+
+    display: block;
+
+  }
+
+
+  .map-toolbar > span {
+
+    display: none;
+
+  }
+
+}
+
+/* ==========================================================================
+   RMC-10 | RESOURCES / NEWS / LEADERSHIP
+   ========================================================================== */
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.news-list {
+  display: grid;
+  gap: 10px;
+}
+.news-list a {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+}
+.news-list span {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #5c6f95;
+  font-weight: 800;
+}
+.news-list strong {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.resource-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.resource-grid a {
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.director-panel blockquote {
+  margin: 18px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.director-panel a {
+  font-size: 11px;
+  color: #1d5bd7;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   RMC-11 | MY RMC
+   ========================================================================== */
+
+.myrmc {
+  padding: 65px 0;
+  background: linear-gradient(135deg, #d9253b, #7b1730);
+  color: white;
+}
+.myrmc-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.myrmc h2 {
+  color: white;
+}
+.myrmc p {
+  color: #ffe8eb;
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   RMC-12 | ASK RMC AI
+   ========================================================================== */
+
+.ask-rmc {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 30;
+  border: 0;
+  border-radius: 999px;
+  background: var(--red);
+  color: white;
+  padding: 15px 20px;
+  font-weight: 800;
+  box-shadow: 0 12px 32px rgba(239, 51, 64, 0.35);
+  cursor: pointer;
+}
+
+/* ---- Ask RMC AI ---- */
+.ai-chat {
+  position: fixed;
+  right: 24px;
+  bottom: 82px;
+  width: min(390px, calc(100vw - 28px));
+  height: min(650px, calc(100vh - 115px));
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(3, 18, 43, 0.28);
+  z-index: 60;
+  display: none;
+  overflow: hidden;
+  grid-template-rows: auto auto 1fr auto auto auto;
+}
+.ai-chat.open {
+  display: grid;
+}
+.ai-chat-head {
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #061630, #0b2758);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ai-chat-head strong {
+  display: block;
+  font-size: 15px;
+}
+.ai-chat-head span {
+  display: block;
+  font-size: 10px;
+  color: #aabbd4;
+  margin-top: 3px;
+}
+.ai-chat-head button {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}
+.ai-chat-notice {
+  padding: 10px 15px;
+  background: #eef5ff;
+  color: #48617f;
+  font-size: 10px;
+  line-height: 1.45;
+  border-bottom: 1px solid #dce8f6;
+}
+.ai-chat-messages {
+  padding: 16px;
+  overflow: auto;
+  background: linear-gradient(#f9fbfe, #f5f8fc);
+}
+.msg {
+  display: flex;
+  margin-bottom: 12px;
+}
+.msg.user {
+  justify-content: flex-end;
+}
+.msg.assistant {
+  justify-content: flex-start;
+}
+.bubble {
+  max-width: 85%;
+  padding: 11px 13px;
+  border-radius: 16px;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+.msg.assistant .bubble {
+  background: #fff;
+  border: 1px solid #dfe5ef;
+  color: #1b2b48;
+  border-bottom-left-radius: 5px;
+}
+.msg.user .bubble {
+  background: #0c2d64;
+  color: #fff;
+  border-bottom-right-radius: 5px;
+}
+.msg.error .bubble {
+  background: #fff0f1;
+  color: #9a2431;
+  border: 1px solid #ffd2d7;
+}
+.ai-suggestions {
+  padding: 0 14px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: #f5f8fc;
+}
+.ai-suggestions button {
+  border: 1px solid #d9e2ef;
+  background: white;
+  border-radius: 999px;
+  padding: 7px 9px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #344e72;
+  cursor: pointer;
+}
+.ai-chat-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #dfe5ef;
+  background: #fff;
+}
+.ai-chat-form textarea {
+  resize: none;
+  border: 1px solid #d6dfeb;
+  border-radius: 12px;
+  padding: 10px;
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+}
+.ai-chat-form textarea:focus {
+  border-color: #4a7cff;
+  box-shadow: 0 0 0 3px rgba(74, 124, 255, 0.1);
+}
+.ai-send {
+  border: 0;
+  border-radius: 12px;
+  padding: 0 15px;
+  background: #ef3340;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+.ai-send:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.ai-chat-foot {
+  padding: 8px 13px;
+  background: #fff;
+  color: #8290a5;
+  font-size: 9px;
+  text-align: center;
+  border-top: 1px solid #eef1f6;
+}
+.typing {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+.typing i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7284a0;
+  animation: typing 1s infinite;
+}
+.typing i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.typing i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes typing {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+@media (max-width: 640px) {
+  .ai-chat {
+    right: 14px;
+    bottom: 76px;
+    height: calc(100vh - 100px);
+  }
+  .ask-rmc {
+    right: 14px;
+    bottom: 16px;
+  }
+  
+}
+
+.ai-source-list {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px solid #e6ebf2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.ai-source-list strong {
+  width: 100%;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #697b95;
+}
+.ai-source-list span {
+  font-size: 9px;
+  padding: 5px 7px;
+  border-radius: 8px;
+  background: #edf4ff;
+  color: #2c5da8;
+}
+
+/* ==========================================================================
+   RMC-13 | FOOTER
+   ========================================================================== */
+
+.footer {
+  background: #05142b;
+  color: #cfd8e6;
+  padding: 55px 0 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr repeat(3, 1fr);
+  gap: 40px;
+}
+.footer strong {
+  color: white;
+  display: block;
+  margin-bottom: 12px;
+}
+.footer a,
+.footer p {
+  display: block;
+  font-size: 11px;
+  color: #91a1b9;
+  margin: 7px 0;
+}
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 35px;
+  padding-top: 20px;
+  font-size: 10px;
+  color: #75849a;
+}
+
+/* ==========================================================================
+   RMC-14 | RESPONSIVE ADJUSTMENTS — SAME PAGE ORDER
+   Keep mobile/tablet fixes grouped here by RMC section number.
+   ========================================================================== */
+
+@media (max-width: 980px) {
+  .nav {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: #071831;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+  .nav-cta {
+    display: none;
+  }
+  .hero-inner,
+  .research-layout,
+  .funding-layout,
+  .grant-layout-2,
+  .global-layout,
+  .split-cards,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 58px;
+  }
+  .hero-visual {
+    display: none;
+  }
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stats article:nth-child(3) {
+    border-right: 0;
+  }
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grant-finder {
+    position: static;
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 24px, 1180px);
+  }
+  .brand {
+    min-width: 0;
+  }
+  .brand-text span {
+    display: none;
+  }
+  .hero {
+    min-height: auto;
+    padding: 125px 0 85px;
+  }
+  .hero h1 {
+    font-size: 46px;
+  }
+  .hero p {
+    font-size: 15px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stats article {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .service-grid,
+  .grant-grid,
+  .grant-grid-2,
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+  .section {
+    padding: 68px 0;
+  }
+  .section h2,
+  .research-map h2,
+  .myrmc h2 {
+    font-size: 32px;
+  }
+  .pipeline {
+    flex-direction: column;
+  }
+  .pipeline i {
+    transform: rotate(90deg);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .myrmc-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

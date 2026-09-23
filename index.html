@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIMST Research Management Centre</title>
+  <meta name="description" content="AIMST University Research Management Centre — Research, Innovation, Impact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="grants.css" />
+  <link rel="stylesheet" href="guidelines.css" />
+  <link rel="stylesheet" href="list-of-grants.css" />
+  <link rel="stylesheet" href="service.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="page-noise"></div>
+
+  <!-- ===== RMC-01 | HEADER / NAVIGATION ===== -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="AIMST RMC home">
+        <!-- <div class="brand-mark">A</div>
+        <div class="brand-text">
+          <strong>AIMST UNIVERSITY</strong>
+          <span>RMC · Research Management Centre</span>
+        </div> -->
+        <img src="./images/798bhb798bhb798b-remove.png" alt="AIMST University logo">
+      </a>
+
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#funding">Funding</a>
+        <a href="#research-explorer">Research</a>
+        <a href="#innovation">Innovation & IP</a>
+        <a href="#ethics">Ethics</a>
+        <a href="#centres">Centres</a>
+        <a href="#global">Collaboration</a>
+        <a href="#resources">Resources</a>
+      </nav>
+
+      <a class="button button-sm button-primary nav-cta" href="#myrmc">My RMC</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== RMC-02 | HERO ===== -->
+    <section class="hero">
+      <div class="hero-grid-overlay"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">AIMST UNIVERSITY · RESEARCH MANAGEMENT CENTRE</div>
+          <h1>Research.<br>Innovation.<br><span>Impact.</span></h1>
+          <p>Advancing discovery, enabling innovation and turning research into measurable societal impact.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#funding">Find Funding</a>
+            <a class="button button-ghost" href="#services">Research Services</a>
+            <a class="button button-ghost" href="#ethics">Research Ethics</a>
+            <a class="button button-ghost" href="#collaboration">Collaborate</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="network-sphere" aria-hidden="true">
+            <div class="sphere-ring ring-1"></div>
+            <div class="sphere-ring ring-2"></div>
+            <div class="sphere-ring ring-3"></div>
+            <div class="sphere-core">RMC</div>
+            <span class="node n1"></span>
+            <span class="node n2"></span>
+            <span class="node n3"></span>
+            <span class="node n4"></span>
+            <span class="node n5"></span>
+            <span class="node n6"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RMC-03 | STATISTICS ===== -->
+    <section class="stats-shell">
+      <div class="container stats">
+        <article><strong data-count="12.8" data-prefix="RM " data-suffix="M+">0</strong><span>Research Funding Secured</span></article>
+        <article><strong data-count="142">0</strong><span>Active Research Projects</span></article>
+        <article><strong data-count="38">0</strong><span>Industry Collaborations</span></article>
+        <article><strong data-count="26">0</strong><span>International Partners</span></article>
+        <article><strong data-count="28">0</strong><span>Patents / IP Filed</span></article>
+        <article><strong data-count="12">0</strong><span>Centres & Research Groups</span></article>
+      </div>
+    </section>
+
+    <!-- ===== RMC-04 | RESEARCH SUPPORT SERVICES ===== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="eyebrow dark">RESEARCH SUPPORT</span>
+          <h2>What can RMC help you with?</h2>
+          <p>Move from idea to implementation with direct access to the services researchers use most.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="icon">🔬</div>
+            <h3>Start a Research Project</h3>
+            <p>Project approval, SOPs, guidelines, forms and templates.</p>
+            <a href="#resources">Explore resources →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">💰</div>
+            <h3>Find Funding</h3>
+            <p>Internal, national, international and industry funding opportunities.</p>
+            <a href="#funding">Browse grants →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="icon">📊</div>
+            <h3>Manage My Grant</h3>
+            <p>Purchasing, claims, reporting, progress monitoring and closeout.</p>
+            <button id="btn-manage-grant" class="learn-more"><span class="circle" aria-hidden="true"><span class="icon arrow"></span>
+            </span><span class="button-text">Manage grant</span></button>
+          </article>
+          <article class="service-card reveal" id="ethics">
+            <div class="icon">⚖️</div>
+            <h3>Research Ethics</h3>
+            <p>Human, animal and biosafety ethics applications and guidance.</p>
+            <a href="#resources">Ethics resources →</a>
+          </article>
+          <article class="service-card reveal" id="innovation">
+            <div class="icon">💡</div>
+            <h3>Protect an Innovation</h3>
+            <p>The research and innovation policy serves as a guideline for academicians for carrying out both fundamental and inventive translational research activity at AIMST UNIVERSITY.</p>
+            <button id="btn-innovation-pathway" class="learn-more"><span class="circle" aria-hidden="true"><span class="icon arrow"></span>
+            </span><span class="button-text">Innovation pathway</span></button>
+          </article>
+          <article class="service-card reveal" id="collaboration">
+            <div class="icon">🤝</div>
+            <h3>Collaborate with AIMST</h3>
+            <p>Industry, academia and international partnership opportunities.</p>
+            <a href="#global">Explore network →</a>
+          </article>
+        </div>
+          <!-- Modal for Manage Grant (16 Items) -->
+  <div class="modal-overlay" id="modal-manage-grant">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2>Manage Grant Documentation</h2>
+        <button class="close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ul class="resource-list">
+          <li class="resource-item">
+            <span class="resource-title">ISO 9001:2015 RMC Quality Manual</span>
+            <div class="btn-group">
+              <a href="./assets/docs/manual.pdf" download class="btn-action btn-pdf">📄 User manual</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">ISO 9001:2015 RMC Quality Policy & Objectives</span>
+            <div class="btn-group">
+              <a href="./assets/docs/policy.pdf" download class="btn-action btn-pdf">📄 Policy & Objectives</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Application Process</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gap-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Account Opening</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gao-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Manpower Requisition</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gmr-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+              <a href="./assets/docs/RMC MAN POWER Requisition form.docx" download class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Salary Claim From Grant</span>
+            <div class="btn-group">
+              <a href="./assets/docs//scfg-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+              <a href="./assets/docs/RMC MAN POWER Salary claim form.doc" download class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Purchase Requisition</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gpr-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+              <a href="./assets/docs/RMC Purchase Requisition Form.docx" download class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Cash Advance Requisition</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gcar-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+              <a href="./assets/docs/RMC Cash Advance Requisition Form.docx" download class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Cash Reimbursement</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gcr-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+              <a href="./assets/docs/RMC Reimbursement Claim Form.docx" download class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Travel Budget Requisition</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gtbr-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+              <a href="./assets/docs/RMC Travel Budget Request.docx" download class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Travel Reimbursement Claim</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gtrc-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+              <a href="./assets/docs/RMC Travel Reimbursement Claim Form.docx" download class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Asset Management</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gam-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Publication Fee Requisition</span>
+            <div class="btn-group">
+              <a href="./assets/docs/pfr-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+              <a href="./assets/docs/RMC Publication Fee Requisition Form.docx" download class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Delivered Item/Service Evaluation Form</span>
+            <div class="btn-group">
+              <a href="./assets/docs/DELIVERED ITEM-SERVICE EVALUATION FORM.docx" download class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Grant Account Monitoring and Closing</span>
+            <div class="btn-group">
+              <a href="./assets/docs/gamac-guideline.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+            </div>
+          </li>
+          <li class="resource-item">
+            <span class="resource-title">Customer Feedback and Satisfaction Monitoring</span>
+            <div class="btn-group">
+              <a href="./assets/docs/cfasm.pdf" download class="btn-action btn-pdf">📄 Guideline</a>
+              <a href="https://docs.google.com/forms/d/1GnB6UsBaSCldsKBCYF5YN2fJNPIGemc5nJRy8OuCXDI/viewform?edit_requested=true" target="_blank" class="btn-action btn-form">📝 Form</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal for Innovation Pathway -->
+  <div class="modal-overlay" id="modal-innovation-pathway">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2>Innovation Pathway</h2>
+        <button class="close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ul class="resource-list">
+          <li class="resource-item">
+            <span class="resource-title">Research & Innovation Policy</span>
+            <div class="btn-group">
+              <a href="./assets/docs/Research & Innovation Policy.pdf" download class="btn-action btn-pdf">📄 Policy</a>
+              <a href="./assets/docs/AIMST INVENTION DISCLOSURE FORM.docx" download class="btn-action btn-form">📝 Invention Declaration Form</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    <!-- ===== RMC-05 | FUNDING OPPORTUNITIES ===== -->
+    <section class="section section-soft" id="funding">
+      <div class="container funding-layout">
+        <div>
+          <div class="section-heading reveal">
+            <span class="eyebrow dark">FUNDING</span>
+            <h2>Research funding opportunities</h2>
+            <p>Filter opportunities by scheme, status and researcher profile.</p>
+          </div>
+
+          <div class="grant-tabs reveal">
+            <button class="tab active" data-filter="all">All</button>
+            <!-- <button class="tab" data-filter="open">Open now</button> -->
+            <!-- <button class="tab" data-filter="soon">Opening soon</button> -->
+            <button class="tab" data-filter="guideline">Guidelines</button>
+            <button class="tab" data-filter="list-of-grants">List of Grants</button>
+          </div>
+
+          <div class="grant-grid" id="grantGrid">
+            <!-- <article class="grant-card reveal" data-status="open national">
+              <span class="status open">Open</span>
+                <h3>FRGS 2027</h3>
+                <p>Fundamental Research Grant Scheme</p>
+                <dl><div><dt>Up to</dt><dd>RM250,000</dd></div><div><dt>Duration</dt><dd>2–3 years</dd></div></dl>
+                <button class="text-button">View details →</button>
+            </article> -->
+            <!-- <article class="grant-card reveal" data-status="open national">
+              <span class="status open">Open</span>
+              <h3>LRGS 2027</h3>
+              <p>Long Term Research Grant Scheme</p>
+              <dl><div><dt>Up to</dt><dd>RM1,000,000+</dd></div><div><dt>Duration</dt><dd>3–5 years</dd></div></dl>
+              <button class="text-button">View details →</button>
+            </article> -->
+            <!-- <article class="grant-card reveal" data-status="soon national">
+              <span class="status soon">Opening soon</span>
+              <h3>PRGS 2027</h3>
+              <p>Prototype Research Grant Scheme</p>
+              <dl><div><dt>Up to</dt><dd>RM300,000</dd></div><div><dt>Duration</dt><dd>2–3 years</dd></div></dl>
+              <button class="text-button">Notify me →</button>
+            </article> -->
+            <article class="grant-card reveal" data-status="guideline">
+              <span class="status guideline">Guideline</span>
+              <h3>MINISTRY OF HIGHER EDUCATION (MOHE)</h3>
+              <p>Institutional Research Grant Scheme</p>
+              <button id="btn-mohe-guideline" class="text-button">View details →</button>
+            </article>
+            <article class="grant-card reveal" data-status="guideline">
+              <span class="status guideline">Guideline</span>
+              <h3>RESEARCH AND DEVELOPMENT GRANTS</h3>
+              <p>Institutional Research Grant Scheme</p>
+              <button id="btn-rd-guideline" class="text-button">View details →</button>
+            </article>
+            <article class="grant-card reveal" data-status="list-of-grants">
+              <span class="status list-of-grants">Grants</span>
+              <h3>Exploratory and Transformative Research Grant (GET)</h3>
+              <p>MoHE has opened applications for the GET 2026 under Dana Kelestarian Penyelidikan.</p>
+              <dl><div><dt>Quantum</dt><dd>RM250,000</dd></div><div><dt>Duration</dt><dd>2-3 years</dd></div><div><dt>Start date</dt><dd>1 March 2026</dd></div><div><dt>Deadline</dt><dd>15 April 2026</dd></div></dl>
+              <button id="btn-get" class="text-button">View details →</button>
+            </article>
+            <article class="grant-card reveal" data-status="list-of-grants">
+              <span class="status list-of-grants">Grants</span>
+              <h3>Geran Penyelidikan Kolaboratif (GPK)</h3>
+              <p>MoHE has opened applications for the GPK 2026 under 13th Malaysia Plan (RMK13).</p>
+              <dl><div><dt>Sinergi</dt><dd>RM1,000,000 (TRL 3-5)</dd></div><div><dt>Sinergi+</dt><dd>RM5,000,000 (TRL 3-6)</dd></div></dl>
+              <button id="btn-gpk" class="text-button">View details →</button>
+            </article>
+          </div>
+          <!-- Modal Overlay -->
+          <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-container">
+              <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+
+              <div class="modal-header">
+                <h2 id="modalTitle">Grant Title</h2>
+                <p id="modalDescription">Grant Description</p>
+              </div>
+            
+              <!-- Vertical Accordion Container -->
+              <div class="accordion" id="modalAccordion">
+                <!-- Dynamic Content Inserted via JS -->
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <aside class="grant-finder reveal">
+          <span class="eyebrow">SMART SEARCH</span>
+          <h3>Grant Finder</h3>
+          <p>Find opportunities that match your research needs.</p>
+          <label>Research area
+            <select id="areaSelect">
+              <option>All</option>
+              <option>Health & Clinical Sciences</option>
+              <option>Science & Technology</option>
+              <option>Engineering & ICT</option>
+              <option>Social Sciences</option>
+            </select>
+          </label>
+          <label>Career stage
+            <select>
+              <option>All</option>
+              <option>Early Career</option>
+              <option>Established Researcher</option>
+              <option>Collaborative Team</option>
+            </select>
+          </label>
+          <label>Status
+            <select id="statusSelect">
+              <option value="all">All</option>
+              <option value="open">Open now</option>
+              <option value="soon">Opening soon</option>
+              <!-- <option value="internal">Internal</option> -->
+              <option value="guideline">Guidelines</option>
+              <option value="list-of-grants">Grants</option>
+            </select>
+          </label>
+          <button class="button button-primary full" id="findGrantsBtn">Find Grants</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== RMC-055 | LIST OF GRANTS ===== -->
+    <section class="section section-soft" id="grant">
+      <div class="container grant-layout-2">
+        <div>
+          <div class="section-heading reveal">
+            <span class="eyebrow dark">Grants</span>
+            <h2>List of Secured Grants</h2>
+            <p>This is list of grants.</p>
+          </div>
+
+          <div class="grant-tabs-2 reveal">
+            <button class="tab2 active" data-filter="all-2">All</button>
+            <!-- <button class="tab2" data-filter="2026">2026</button> -->
+            <button class="tab2" data-filter="2025">2025</button>
+            <button class="tab2" data-filter="2024">2024</button>
+            <button class="tab2" data-filter="2023">2023</button>
+            <button class="tab2" data-filter="2022">2022</button>
+            <button class="tab2" data-filter="2021">2021</button>
+            <button class="tab2" data-filter="2020">2020</button>
+            <button class="tab2" data-filter="2019">2019</button>
+            <button class="tab2" data-filter="2018">2018</button>
+            <button class="tab2" data-filter="2017">2017</button>
+          </div>
+
+          <div class="grant-grid-2" id="grantGrid">
+            <article class="grant-card2 reveal" data-status="2025 external">
+              <span class="status-2 2025 external">External</span>
+              <h3>Grand Total: RM 40,000.00</h3>
+              <dl><div><dt>Industry</dt><dd>1</dd></div><div><dt>Total grants</dt><dd>1</dd></div><div><dt>Completed</dt><dd>1</dd></div></dl>
+              <button id="btn-2025" class="text-button">View details →</button>
+            </article>
+            
+            <article class="grant-card2 reveal" data-status="2024 external">
+              <span class="status-2 2024 external">External</span>
+              <h3>Total funding: RM 302,650.00</h3>
+              <dl><div><dt>Industry</dt><dd>1</dd></div><div><dt>National</dt><dd>2</dd></div><div><dt>Total grants</dt><dd>3</dd></div><div><dt>Active</dt><dd>2</dd></div><div><dt>Completed</dt><dd>1</dd></div></dl>
+              <button id="btn-2024" class="text-button">View details →</button>
+            </article>
+        
+            <article class="grant-card2 reveal" data-status="2023 external">
+              <span class="status-2 2023 external">External</span>
+              <h3>Total funding: RM 1,424,349.00</h3>
+              <dl><div><dt>National</dt><dd>5</dd></div><div><dt>International</dt><dd>1</dd></div><div><dt>Total grants</dt><dd>6</dd></div><div><dt>Active</dt><dd>6</dd></div></dl>
+              <button id="btn-2023" class="text-button">View details →</button>
+            </article>
+        
+            <article class="grant-card2 reveal" data-status="2022 external">
+              <span class="status-2 2022 external">External</span>
+              <h3>Total funding: RM 629,110.00</h3>
+              <dl><div><dt>National</dt><dd>5</dd></div><div><dt>Total grants</dt><dd>5</dd></div><div><dt>Active</dt><dd>1</dd></div><div><dt>Completed</dt><dd>4</dd></div></dl>
+              <button id="btn-2022" class="text-button">View details →</button>
+            </article>
+        
+            <article class="grant-card2 reveal" data-status="2021 external">
+              <span class="status-2 2021 external">External</span>
+              <h3>Total funding: RM 3,974,450.00</h3>
+              <dl><div><dt>Industry</dt><dd>1</dd></div><div><dt>National</dt><dd>6</dd></div><div><dt>International</dt><dd>1</dd></div><div><dt>Total grants</dt><dd>8</dd></div><div><dt>Completed</dt><dd>8</dd></div></dl>
+              <button id="btn-2021" class="text-button">View details →</button>
+            </article>
+        
+            <article class="grant-card2 reveal" data-status="2020 external">
+              <span class="status-2 2020 external">External</span>
+              <h3>Total funding: RM 1,991,115.81</h3>
+              <dl><div><dt>Industry</dt><dd>2</dd></div><div><dt>National</dt><dd>4</dd></div><div><dt>International</dt><dd>1</dd></div><div><dt>Total grants</dt><dd>7</dd></div><div><dt>Completed</dt><dd>7</dd></div></dl>
+              <button id="btn-2020" class="text-button">View details →</button>
+            </article>
+            <article class="grant-card2 reveal" data-status="2019 external">
+              <span class="status-2 2019 external">External</span>
+              <h3>Total funding: RM 976,800.00</h3>
+              <dl><div><dt>Industry</dt><dd>4</dd></div><div><dt>National</dt><dd>4</dd></div><div><dt>International</dt><dd>1</dd></div><div><dt>Total grants</dt><dd>9</dd></div><div><dt>Completed</dt><dd>9</dd></div></dl>
+              <button id="btn-2019" class="text-button">View details →</button>
+            </article>
+            <article class="grant-card2 reveal" data-status="2018 external">
+              <span class="status-2 2018 external">External</span>
+              <h3>Total funding: RM 1,641,400.00</h3>
+              <dl><div><dt>Industry</dt><dd>1</dd></div><div><dt>National</dt><dd>11</dd></div><div><dt>Total grants</dt><dd>12</dd></div><div><dt>Completed</dt><dd>12</dd></div></dl>
+              <button id="btn-2018" class="text-button">View details →</button>
+            </article>
+            <article class="grant-card2 reveal" data-status="2017 external">
+              <span class="status-2 2017 external">External</span>
+              <h3>Total funding: RM 466,100.00</h3>
+              <dl><div><dt>Industry</dt><dd>1</dd></div><div><dt>National</dt><dd>3</dd></div><div><dt>Total grants</dt><dd>4</dd></div><div><dt>Completed</dt><dd>4</dd></div></dl>
+              <button id="btn-2017" class="text-button">View details →</button>
+            </article>
+
+            <article class="grant-card2 reveal" data-status="2017 internal">
+              <span class="status-2 2017 internal">Internal</span>
+              <h3>Grand Total: RM XXXXXXXX</h3>
+              <dl><div><dt>Internal</dt><dd>1</dd></div><div><dt>Total grants</dt><dd>1</dd></div><div><dt>Completed</dt><dd>1</dd></div></dl>
+              <button id="btn-2017-internal" class="text-button">View details →</button>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RMC-06 | RESEARCH EXPLORER ===== -->
+    <section class="research-explorer-v2" id="research-explorer">
+
+  <div class="container">
+
+    <div class="research-explorer-layout">
+
+      <!-- LEFT SIDE -->
+      <div class="research-explorer-copy">
+
+        <span class="eyebrow">
+          DISCOVER
+        </span>
+
+        <h2>
+          Explore AIMST Research
+        </h2>
+
+        <p>
+          Discover how researchers, centres and partners
+          connect across disciplines to solve real-world
+          challenges.
+        </p>
+
+        <button
+          class="research-explorer-main-btn"
+          id="resetResearchExplorer"
+          type="button"
+        >
+          Explore Research Ecosystem
+          <span>→</span>
+        </button>
+
+      </div>
+
+
+      <!-- RIGHT SIDE -->
+      <div class="research-explorer-stage">
+
+        <!-- ==============================
+             CATEGORY VIEW
+             ============================== -->
+
+        <div
+          class="research-category-view active"
+          id="researchCategoryView"
+        >
+
+          <p class="research-select-label">
+            Select a research category to explore
+          </p>
+
+
+          <div class="research-category-orbit">
+
+            <div class="research-centre-node">
+              <div class="research-centre-inner">
+                <!-- <span class="research-centre-icon">A</span> -->
+                <img src="./images/LOGO Art1 (3).png" alt="AIMST University logo" class="research-centre-icon" width="100" height="100">
+                <!-- <strong>
+                  AIMST
+                  <br>
+                  UNIVERSITY
+                </strong> -->
+              </div>
+            </div>
+
+
+            <!-- HEALTH -->
+
+            <button
+              class="research-category-node node-health"
+              type="button"
+              data-category="health"
+            >
+              <span class="category-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </span>
+
+              <span>
+                HEALTH &
+                <br>
+                CLINICAL SCIENCES
+              </span>
+            </button>
+
+
+            <!-- BIOTECHNOLOGY -->
+
+            <button
+              class="research-category-node node-biotech"
+              type="button"
+              data-category="biotechnology"
+            >
+              <span class="category-icon">
+                <i class="fa-solid fa-dna"></i>
+              </span>
+
+              <span>
+                BIOTECHNOLOGY
+              </span>
+            </button>
+
+
+            <!-- PHARMACEUTICAL -->
+
+            <button
+              class="research-category-node node-pharma"
+              type="button"
+              data-category="pharmaceutical"
+            >
+              <span class="category-icon">
+                <i class="fa-solid fa-capsules"></i>
+              </span>
+
+              <span>
+                PHARMACEUTICAL
+                <br>
+                RESEARCH
+              </span>
+            </button>
+
+
+            <!-- AI -->
+
+            <button
+              class="research-category-node node-ai"
+              type="button"
+              data-category="ai"
+            >
+              <span class="category-icon">
+                <i class="fa-solid fa-brain"></i>
+              </span>
+
+              <span>
+                ARTIFICIAL
+                INTELLIGENCE
+                <br>
+                & DATA SCIENCE
+              </span>
+            </button>
+
+
+            <!-- ENGINEERING -->
+
+            <button
+              class="research-category-node node-engineering"
+              type="button"
+              data-category="engineering"
+            >
+              <span class="category-icon">
+                <i class="fa-solid fa-gear"></i>
+              </span>
+
+              <span>
+                ENGINEERING
+                <br>
+                & TECHNOLOGY
+              </span>
+            </button>
+
+
+            <!-- PUBLIC HEALTH -->
+
+            <button
+              class="research-category-node node-publichealth"
+              type="button"
+              data-category="publichealth"
+            >
+              <span class="category-icon">
+                <i class="fa-solid fa-virus-covid"></i>
+              </span>
+
+              <span>
+                PUBLIC HEALTH
+                <br>
+                & EPIDEMIOLOGY
+              </span>
+            </button>
+
+
+            <!-- ENVIRONMENT -->
+
+            <button
+              class="research-category-node node-environment"
+              type="button"
+              data-category="environment"
+            >
+              <span class="category-icon">
+                <i class="fa-solid fa-seedling"></i>
+              </span>
+
+              <span>
+                ENVIRONMENT &
+                <br>
+                SUSTAINABILITY
+              </span>
+            </button>
+
+
+            <!-- SOCIAL -->
+
+            <button
+              class="research-category-node node-social"
+              type="button"
+              data-category="social"
+            >
+              <span class="category-icon">
+                <i class="fa-solid fa-people-group"></i>
+              </span>
+
+              <span>
+                SOCIAL SCIENCES
+                <br>
+                & HUMANITIES
+              </span>
+            </button>
+
+          </div>
+
+
+          <div class="research-click-hint">
+            <span class="research-click-icon">
+              <i class="fa-solid fa-hand-point-left"></i>
+            </span>
+
+            <span>
+              Click on any category
+              <br>
+              to explore in detail
+            </span>
+          </div>
+
+        </div>
+
+
+        <!-- ==============================
+             EXPANDED VIEW
+             ============================== -->
+
+        <div
+          class="research-expanded-view"
+          id="researchExpandedView"
+        >
+
+          <button
+            class="research-back-btn"
+            id="researchBackBtn"
+            type="button"
+          >
+            ← Back to all categories
+          </button>
+
+
+          <div class="research-expanded-panel">
+
+            <div class="research-expanded-header">
+
+              <div
+                class="research-expanded-orbit"
+                id="expandedOrbit"
+              >
+
+                <div class="expanded-orbit-ring ring-one"></div>
+                <div class="expanded-orbit-ring ring-two"></div>
+                <div class="expanded-orbit-ring ring-three"></div>
+
+                <div class="expanded-main-node">
+
+                  <span
+                    class="expanded-main-icon"
+                    id="expandedMainIcon"
+                  >
+                    ♡
+                  </span>
+
+                  <strong
+                    id="expandedTitle"
+                  >
+                    HEALTH &
+                    <br>
+                    CLINICAL SCIENCES
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="research-expanded-content">
+
+                <span class="expanded-small-label">
+                  RESEARCH CATEGORY
+                </span>
+
+                <h3 id="expandedHeading">
+                  Health & Clinical Sciences
+                </h3>
+
+                <p id="expandedIntro">
+                  Advancing human health and wellbeing through
+                  innovative research, translational studies and
+                  clinical excellence.
+                </p>
+
+
+                <!-- RESEARCH AREAS -->
+
+                <div class="research-areas-section">
+
+                  <h4>
+                    Research Areas
+                  </h4>
+
+                  <div
+                    class="research-area-grid"
+                    id="researchAreaGrid"
+                  >
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="research-expanded-bottom">
+
+              <div class="expanded-column">
+
+                <h4>
+                  Research Strengths
+                </h4>
+
+                <ul id="researchStrengthList">
+                </ul>
+
+              </div>
+
+
+              <div class="expanded-column">
+
+                <h4>
+                  Key Centres & Units
+                </h4>
+
+                <ul id="researchCentreList">
+                </ul>
+
+              </div>
+
+
+              <div class="expanded-stats">
+
+                <div>
+                  <strong id="researcherCount">
+                    —
+                  </strong>
+
+                  <span>
+                    Active Researchers
+                  </span>
+                </div>
+
+                <div>
+                  <strong id="projectCount">
+                    —
+                  </strong>
+
+                  <span>
+                    Ongoing Projects
+                  </span>
+                </div>
+
+                <div>
+                  <strong id="partnerCount">
+                    —
+                  </strong>
+
+                  <span>
+                    Collaborating Partners
+                  </span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- ===== RMC-07 | RESEARCH IMPACT ===== -->
+    <section class="section" id="impact">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow dark">IMPACT</span>
+          <h2>Research making an impact</h2>
+        </div>
+
+        <div class="story-grid">
+          <article class="story-card reveal">
+            <div class="story-visual visual-a"></div>
+            <div class="story-body"><h3>Fighting Antimicrobial Resistance</h3><p>Genomics, surveillance and new therapeutic approaches for multidrug-resistant infections.</p><a href="#">Read story →</a></div>
+          </article>
+          <article class="story-card reveal">
+            <div class="story-visual visual-b"></div>
+            <div class="story-body"><h3>Precision Agriculture</h3><p>Microbial and omics technologies supporting resilient and productive food systems.</p><a href="#">Read story →</a></div>
+          </article>
+          <article class="story-card reveal">
+            <div class="story-visual visual-c"></div>
+            <div class="story-body"><h3>AI & Digital Health</h3><p>Computational research translating data into better healthcare decision-making.</p><a href="#">Read story →</a></div>
+          </article>
+          <article class="story-card reveal">
+            <div class="story-visual visual-d"></div>
+            <div class="story-body"><h3>Industry Innovation</h3><p>Turning university research into products, partnerships and real-world solutions.</p><a href="#">Read story →</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RMC-08 | CENTRES & INNOVATION PIPELINE ===== -->
+    <section class="section section-soft" id="centres">
+      <div class="container split-cards">
+        <article class="panel reveal">
+          <span class="eyebrow dark">EXCELLENCE</span>
+          <h2>Centres of Excellence</h2>
+          <div class="mini-centres">
+            <div><strong>COMBio</strong><span>Omics-driven computational biodiscovery</span></div>
+            <div><strong>Neuroscience</strong><span>Translational neurological research</span></div>
+            <div><strong>Regenerative Medicine</strong><span>Biomedical innovation</span></div>
+          </div>
+        </article>
+
+        <article class="panel reveal" id="pipeline">
+          <span class="eyebrow dark">TRANSLATION</span>
+          <h2>Innovation pipeline</h2>
+          <div class="pipeline">
+            <div><b>01</b><span>Discovery</span></div><i>→</i>
+            <div><b>02</b><span>IP Protection</span></div><i>→</i>
+            <div><b>03</b><span>Validation</span></div><i>→</i>
+            <div><b>04</b><span>Industry</span></div><i>→</i>
+            <div><b>05</b><span>Commercialisation</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== RMC-09 | GLOBAL RESEARCH NETWORK ===== -->
+    <section class="section global-section" id="global">
+
+  <div class="container">
+
+    <div class="global-heading">
+      <div>
+        <span class="eyebrow dark">
+          GLOBAL CONNECTIONS
+        </span>
+
+        <h2>
+          Global Research Network
+        </h2>
+
+        <p>
+          Explore AIMST University's international
+          research and academic collaboration network.
+        </p>
+      </div>
+
+      <div class="global-network-stats">
+
+        <div>
+          <strong>26</strong>
+          <span>Countries</span>
+        </div>
+
+        <div>
+          <strong>86</strong>
+          <span>Institutions</span>
+        </div>
+
+        <div>
+          <strong>38</strong>
+          <span>Industry Partners</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="research-map-shell">
+
+      <!-- MAP -->
+
+      <div class="research-map-container">
+
+        <div class="map-toolbar">
+
+          <span>
+            AIMST Global Research Network
+          </span>
+
+          <div>
+
+            <button
+              id="zoomIn"
+              aria-label="Zoom in"
+            >
+              +
+            </button>
+
+            <button
+              id="zoomOut"
+              aria-label="Zoom out"
+            >
+              −
+            </button>
+
+            <button
+              id="resetMap"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <svg
+          id="researchWorldMap"
+          aria-label="Interactive AIMST global research network map"
+        ></svg>
+
+
+        <div
+          id="mapTooltip"
+          class="map-tooltip"
+        ></div>
+
+
+        <div class="map-legend">
+
+          <span>
+            <i class="legend-aimst"></i>
+            AIMST University
+          </span>
+
+          <span>
+            <i class="legend-partner"></i>
+            Research Partner
+          </span>
+
+          <span>
+            <i class="legend-route"></i>
+            Collaboration
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- INFORMATION PANEL -->
+
+      <aside
+        class="research-map-info"
+        id="researchMapInfo"
+      >
+
+        <span class="map-info-label">
+          GLOBAL RESEARCH NETWORK
+        </span>
+
+        <h3 id="networkCountry">
+          AIMST University
+        </h3>
+
+        <p
+          id="networkInstitution"
+          class="network-institution"
+        >
+          Malaysia
+        </p>
+
+        <p id="networkDescription">
+          AIMST University serves as the central hub
+          connecting researchers with academic,
+          healthcare and industry partners worldwide.
+        </p>
+
+
+        <div class="network-info-grid">
+
+          <div>
+            <span>Location</span>
+            <strong id="networkLocation">
+              Malaysia
+            </strong>
+          </div>
+
+          <div>
+            <span>Collaboration</span>
+            <strong id="networkType">
+              Research Hub
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="network-prompt">
+          Select a glowing research location on
+          the map to view collaboration details.
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- ===== RMC-10 | RESOURCES / NEWS / LEADERSHIP ===== -->
+    <section class="section" id="resources">
+      <div class="container bottom-grid">
+        <article class="panel reveal">
+          <span class="eyebrow dark">UPDATES</span>
+          <h2>Latest news & opportunities</h2>
+          <div class="news-list">
+            <a href="#"><span>Funding</span><strong>New external research call announced</strong></a>
+            <a href="#"><span>Workshop</span><strong>Writing successful grant proposals</strong></a>
+            <a href="#"><span>Collaboration</span><strong>New international research partnership</strong></a>
+          </div>
+        </article>
+
+        <article class="panel reveal">
+          <span class="eyebrow dark">RESOURCES</span>
+          <h2>Research resources</h2>
+          <div class="resource-grid">
+            <a href="#">Policies & Guidelines</a>
+            <a href="#">SOPs</a>
+            <a href="#">Forms & Templates</a>
+            <a href="#">Ethics Resources</a>
+            <a href="#">MyGRANTS Guide</a>
+            <a href="#">Research Integrity</a>
+          </div>
+        </article>
+
+        <article class="panel director-panel reveal">
+          <span class="eyebrow dark">LEADERSHIP</span>
+          <h2>Director's message</h2>
+          <blockquote>“Our role is to enable researchers—connecting ideas with funding, expertise, infrastructure, collaborators and pathways to impact.”</blockquote>
+          <a href="#">Read full message →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== RMC-11 | MY RMC ===== -->
+    <section class="myrmc" id="myrmc">
+      <div class="container myrmc-inner reveal">
+        <div>
+          <span class="eyebrow">RESEARCHER PORTAL</span>
+          <h2>My RMC</h2>
+          <p>A future personalised space for your grants, ethics applications, reporting deadlines and research outputs.</p>
+        </div>
+        <a class="button button-light" href="#">University Login</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RMC-12 | ASK RMC AI ===== -->
+  <button class="ask-rmc" id="askBtn" aria-label="Ask RMC AI">Ask RMC AI</button>
+
+  <section class="ai-chat" id="chatPopover" aria-hidden="true" aria-label="Ask RMC AI">
+    <div class="ai-chat-head">
+      <div>
+        <strong>Ask RMC AI</strong>
+        <span>Research support assistant</span>
+      </div>
+      <button id="closeChat" aria-label="Close chat">×</button>
+    </div>
+
+    <div class="ai-chat-notice">
+      Answers are generated from approved RMC knowledge supplied to this prototype. Verify critical deadlines and policy requirements with RMC.
+    </div>
+
+    <div class="ai-chat-messages" id="chatMessages">
+      <div class="msg assistant">
+        <div class="bubble">
+          Hello. I can help you find RMC procedures, grants, ethics guidance, forms and innovation support.
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-suggestions" id="aiSuggestions">
+      <button data-question="How do I submit a research ethics application?">Ethics submission</button>
+      <button data-question="What grant support does RMC provide?">Find funding</button>
+      <button data-question="How do I request a grant variation?">Grant variation</button>
+      <button data-question="How can I protect intellectual property from my research?">IP support</button>
+    </div>
+
+    <form class="ai-chat-form" id="chatForm">
+      <textarea id="chatInput" rows="2" maxlength="1200" placeholder="Ask RMC a question…" required></textarea>
+      <button type="submit" class="ai-send" id="sendBtn">Send</button>
+    </form>
+
+    <div class="ai-chat-foot">
+      AI can make mistakes. Do not enter confidential, personal, patient or unpublished sensitive data.
+    </div>
+  </section>
+
+  <!-- ===== RMC-13 | FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><strong>AIMST UNIVERSITY · RMC</strong><p>Research Management Centre</p></div>
+      <div><strong>Quick links</strong><a href="#funding">Funding</a><a href="#ethics">Ethics</a><a href="#innovation">Innovation & IP</a></div>
+      <div><strong>Support</strong><a href="#resources">Contact RMC</a><a href="#resources">Forms</a><a href="#resources">FAQs</a></div>
+      <div><strong>Research</strong><a href="#research">Explore research</a><a href="#centres">Centres</a><a href="#global">Collaboration</a><a href="#publications">RMC Team</a></div>
+    </div>
+    <div class="container copyright">© AIMST University. Prototype RMC redesign.</div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="script.js"></script>
+  <script src="grants.js"></script>
+  <script src="guidelines.js"></script>
+  <script src="list-of-grants.js"></script>
+  <script src="rmc-enhancements.js"></script>
+  <script src="service.js"></script>
+</body>
+</html>
